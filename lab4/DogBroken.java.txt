@@ -1,0 +1,6 @@
+// WON'T COMPILE:
+class Dog extends Animal {
+    // no constructor written -> Java inserts   Dog() { super(); }
+    // but Animal has no Animal() -> error:
+    // constructor Animal in class Animal cannot be applied to given types
+}

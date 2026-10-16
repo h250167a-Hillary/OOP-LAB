@@ -1,0 +1,47 @@
+1
+B
+B101
+Introduction to Java
+James Gosling
+1
+D
+D201
+The Social Network
+120
+1
+B
+B102
+Java Concurrency, in Practice
+Brian Goetz
+1
+B
+B101
+Duplicate Id Book
+Nobody
+2
+M01
+Larry Mujawo
+3
+M01
+B101
+3
+M01
+B101
+3
+M01
+D201
+3
+M01
+B102
+1
+B
+B103
+Data Structures
+Weiss
+3
+M01
+B103
+6
+java
+7
+0

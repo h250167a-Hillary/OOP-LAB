@@ -1,0 +1,4 @@
+Object oriented programming is fun.
+Java makes it practical and portable.
+
+Streams and lambdas make code short.

@@ -1,0 +1,30 @@
+digraph G {
+  rankdir=BT; fontname="Helvetica"; nodesep=0.5; ranksep=0.7;
+  node [shape=record, fontname="Helvetica", fontsize=10, style=filled, fillcolor="#F4F7FB", color="#33507A"];
+  edge [fontname="Helvetica", fontsize=9, color="#33507A"];
+
+  Borrowable [label="{«interface»\nBorrowable|+ borrow(Member)\l+ giveBack()\l}", fillcolor="#E8F3E8"];
+  LibraryItem [label="{«abstract»\nLibraryItem|- id : String\l- title : String\l- available : boolean\l|+ loanPeriodDays() : int (abstract)\l+ type() : String (abstract)\l+ extraField() : String (abstract)\l+ borrow(Member)\l+ giveBack()\l}"];
+  Book [label="{Book|- author : String\l|+ loanPeriodDays() : int : 14 days\l}"];
+  Dvd [label="{Dvd|- durationMinutes : int\l|+ loanPeriodDays() : int : 7 days\l}"];
+  Member [label="{Member|- id : String\l- name : String\l- loans : List\<Loan\>\l+ MAX_LOANS : 3\l|+ canBorrow() : boolean\l~ addLoan(Loan)\l~ removeLoan(Loan)\l}"];
+  Loan [label="{Loan|- loanDate : LocalDate\l- dueDate : LocalDate\l|+ isOverdue(LocalDate)\l+ daysOverdue(LocalDate)\l}"];
+  Library [label="{Library|- items : Map\<String, LibraryItem\>\l- members : Map\<String, Member\>\l|+ addItem() / registerMember()\l+ borrow(memberId, itemId)\l+ giveBack(itemId)\l+ overdueLoans() : List\<Loan\>\l+ searchByTitle(text) : List\l+ save(Path) / load(Path)\l}", fillcolor="#FFF6DD"];
+  LibraryApp [label="{LibraryApp|+ main(String[])\l+ run() : menu loop\l}", fillcolor="#FFF6DD"];
+  E1 [label="{«checked exception»\nItemNotAvailableException}", fillcolor="#FBE9E7"];
+  E2 [label="{«checked exception»\nMemberLimitExceededException}", fillcolor="#FBE9E7"];
+  Ex [label="Exception", fillcolor="white"];
+
+  LibraryItem -> Borrowable [arrowhead=onormal, style=dashed, label="implements"];
+  Book -> LibraryItem [arrowhead=onormal, label="extends"];
+  Dvd -> LibraryItem [arrowhead=onormal, label="extends"];
+  E1 -> Ex [arrowhead=onormal]; E2 -> Ex [arrowhead=onormal];
+  Loan -> LibraryItem [arrowhead=vee, label="item"];
+  Loan -> Member [arrowhead=vee, label="member"];
+  Member -> Loan [dir=both, arrowtail=odiamond, arrowhead=none, label="0..3"];
+  Library -> LibraryItem [dir=both, arrowtail=diamond, arrowhead=none, label="0..*"];
+  Library -> Member [dir=both, arrowtail=diamond, arrowhead=none, label="0..*"];
+  LibraryApp -> Library [arrowhead=vee, label="uses"];
+  Library -> E1 [style=dotted, arrowhead=vee, label="throws"];
+  Library -> E2 [style=dotted, arrowhead=vee, label="throws"];
+}

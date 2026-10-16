@@ -1,0 +1,15 @@
+Loaded 4 items, 1 members, 3 loans from demo_data
+Choose an option: 5
+Introduction to Java -> Larry Mujawo (borrowed 2026-09-22, due 2026-10-06)  -> 9 day(s) overdue
+Choose an option: 4
+Item id to return: B101
+Returned 9 day(s) late.
+Choose an option: 5
+No overdue items.
+Choose an option: 6
+Search text: data
+[BOOK] B103   Data Structures                loan:14 days  available  by Weiss
+Choose an option: 9
+Unknown option, try again.
+Choose an option: 0
+Data saved to demo_data. Goodbye!

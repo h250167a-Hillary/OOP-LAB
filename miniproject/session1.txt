@@ -1,0 +1,66 @@
+Loaded 0 items, 0 members, 0 loans from demo_data
+Choose an option: 1
+Type (B = book, D = dvd): B
+Item id: B101
+Title: Introduction to Java
+Author: James Gosling
+Added: [BOOK] B101   Introduction to Java           loan:14 days  available  by James Gosling
+Choose an option: 1
+Type (B = book, D = dvd): D
+Item id: D201
+Title: The Social Network
+Duration (minutes): 120
+Added: [DVD] D201   The Social Network             loan: 7 days  available  (120 min)
+Choose an option: 1
+Type (B = book, D = dvd): B
+Item id: B102
+Title: Java Concurrency, in Practice
+Author: Brian Goetz
+Added: [BOOK] B102   Java Concurrency, in Practice  loan:14 days  available  by Brian Goetz
+Choose an option: 1
+Type (B = book, D = dvd): B
+Item id: B101
+Title: Duplicate Id Book
+Author: Nobody
+Error: An item with id B101 already exists
+Choose an option: 2
+Member id: M01
+Name: Larry Mujawo
+Registered: M01    Larry Mujawo         loans: 0/3
+Choose an option: 3
+Member id: M01
+Item id: B101
+Loan created: Introduction to Java -> Larry Mujawo (borrowed 2026-10-15, due 2026-10-29)
+Choose an option: 3
+Member id: M01
+Item id: B101
+Cannot complete: Item B101 ("Introduction to Java") is not available: it is already on loan
+Choose an option: 3
+Member id: M01
+Item id: D201
+Loan created: The Social Network -> Larry Mujawo (borrowed 2026-10-15, due 2026-10-22)
+Choose an option: 3
+Member id: M01
+Item id: B102
+Loan created: Java Concurrency, in Practice -> Larry Mujawo (borrowed 2026-10-15, due 2026-10-29)
+Choose an option: 1
+Type (B = book, D = dvd): B
+Item id: B103
+Title: Data Structures
+Author: Weiss
+Added: [BOOK] B103   Data Structures                loan:14 days  available  by Weiss
+Choose an option: 3
+Member id: M01
+Item id: B103
+Cannot complete: Member M01 already has the maximum of 3 loans
+Choose an option: 6
+Search text: java
+[BOOK] B101   Introduction to Java           loan:14 days  ON LOAN  by James Gosling
+[BOOK] B102   Java Concurrency, in Practice  loan:14 days  ON LOAN  by Brian Goetz
+Choose an option: 7
+[BOOK] B101   Introduction to Java           loan:14 days  ON LOAN  by James Gosling
+[DVD] D201   The Social Network             loan: 7 days  ON LOAN  (120 min)
+[BOOK] B102   Java Concurrency, in Practice  loan:14 days  ON LOAN  by Brian Goetz
+[BOOK] B103   Data Structures                loan:14 days  available  by Weiss
+Choose an option: 0
+Data saved to demo_data. Goodbye!
